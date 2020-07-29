@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script src="index.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center" id="currentweatherimg" style="background-image: url(180421.jpg); background-repeat: no-repeat; background-size: 100% 100%; color: wheat;">
+  
+  <h3 id="placename">place name</h3>
+  <h2  id="currenttemp">34&#8451; / 27&#8451;</h2>
+  <h3 id="currentdtday">Saturday</h3><h3 id="currentdtfull">July 26</h3> 
+  <i><img id="currentweathericon" src="icon.png"></i>
+  <h3 id="currentweatherdescription">Cloudy</h3>
+</div>
+
+<nav class="navbar">
+  <div>
+  <input type="text" id="inputname" class="form-control location-search" name="search" placeholder="Search Your City...">
+  <button class="btn btn-success"  id="submit" type="submit" style="float: left; height: 50px; width: 50px; border-radius: 50px;"><i class="fa fa-search"></i></button>
+  <button class="btn btn-success " style="float: left; height: 50px; width: 50px; border-radius: 50px;margin-left: 6px;" id="location-button" ><i class="fa">&#xf124;</i></button>
+</div>
+</nav>
+
+  
+<div class="container" >
+  <h2>Next 12hours forcast</h2>
+    <div id="hourly" class="today">
+        
+        <script type="text/javascript">
+          var hourly = "";
+          var i;
+          for( i=0;i<=11;i++){
+              hourly += 
+              "<div>"+
+              "<p id='hourly"+i+"dt'>lkjhgfds</p>"+
+              "<i><img id='hourly"+i+"weathericon' src='icon.png'></i>"+
+              "<p id='hourly"+i+"weatherdescription'>lkjhgfd</p>"+
+              "<p id='hourly"+i+"temp'>kjhgfds suman</p>"+
+              "</div>" ;
+              
+              }
+              document.getElementById('hourly').innerHTML= hourly;
+          </script>
+    </div>
+  <div class="row">
+    <div class="col-sm-4 humidity" style="text-align: center;">
+      <h2 style="margin-bottom: 30px;">Today's Weather</h2>
+      <div><p>Sunrise: </p><p id="currentsunrise">32</p></div>
+      <div><p>Sunset: </p><p id="currentsunset">32</p></div>
+      <div><p>Feels like: </p><p id="currentfeelslike">30</p></div>
+      <div><p>UV Index: </p><p id="currentuvi">32</p></div>
+      <div><p>Wind: </p><p  id="currentwindspeed">10</p></div>
+      <div><p>Humidity: </p><p id="currenthumidity">85</p></div>
+      <div><p>Visibility: </p><p id="currentvisibility">32</p></div>
+      <div><p>Air Pressure: </p><p id="currentpressure">32</p></div>
+      <hr class="d-sm-none">
+    </div>
+    
+    <div class="col-sm-8 future" style="text-align: center;">
+  
+        <h2 style="margin-bottom: 30px; ">Forcast For The Next 8 Days</h2>
+        <hr />
+        <div  id="daily">
+      <script type="text/javascript">
+        var daily = "";
+        var j;
+        for( j=0;j<=7;j++){
+         daily += 
+        "<div>"+
+          "<p id='daily"+j+"dt'>1stcol</p>"+
+          "<p id='daily"+j+"weatherdescription'>3rdcol</p>"+
+          "<i style='float:left; height: 100%; width: 25%;'><img id='daily"+j+"weathericon' src='icon.png' style='width: 50px; height: 50px;' ></i>"+
+          "<p id='daily"+j+"temp'>4thcol</p>"+
+        "</div>"
+    }
+        document.getElementById('daily').innerHTML= daily;
+    </script>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0; border-radius: 0px; color: aliceblue; background-color: darkcyan;">
+    <h1>Contact Info</h1>
+    <p>ssumansaha6@gmail.com</p>
+
+</div>
+
+</body>
+<script src="index.js"></script>
+</html>
