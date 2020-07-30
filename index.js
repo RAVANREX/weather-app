@@ -59,7 +59,7 @@ function datecoverter(timestamp){
     //The getDay() method returns the day of the week (from 0 to 6) for the specified date.
     // Note: Sunday is 0, Monday is 1, and so on.
     var dayno= date_ob.getDay();
-    dayname = ["Sunday","Monday" ,"Tuesday","Wednesday","Thusday","Friday","Saterday"];
+    dayname = ["Sunday","Monday" ,"Tuesday","Wednesday","Thursday","Friday","Saturday"];
       return dayname[dayno];
       }
   
