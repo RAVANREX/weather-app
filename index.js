@@ -99,7 +99,7 @@ function datecoverter(timestamp){
               document.getElementById('currentweatherdescription').innerHTML = data.current.weather[0].description;
 
               // change the background IMG according to weather
-              if(data.current.weather[0].main === "Thunderstorm"){
+                    if(data.current.weather[0].main === "Thunderstorm"){
                 document.getElementById('currentweatherimg').style.backgroundImage = "url('gif/Thunderstorm.gif')";
               }else if(data.current.weather[0].main === "Drizzle"){
                 document.getElementById('currentweatherimg').style.backgroundImage = "url('gif/Drizzle.gif')";
@@ -113,6 +113,8 @@ function datecoverter(timestamp){
                 document.getElementById('currentweatherimg').style.backgroundImage = "url('gif/Clear.gif')";
               }else if(data.current.weather[0].main === "Clouds"){
                 document.getElementById('currentweatherimg').style.backgroundImage = "url('gif/Clouds.gif')";
+              }else if(data.current.weather[0].main === "Haze"){
+                document.getElementById('currentweatherimg').style.backgroundImage = "url('gif/Haze.gif')";
               }
 
             // \\ change the background IMG according to weather
@@ -249,6 +251,7 @@ function datecoverter(timestamp){
 // location dector function
 
   $('#location-button').click(function(){
+    
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function(position){
         cityname(position.coords.latitude, position.coords.longitude);
@@ -264,7 +267,8 @@ function datecoverter(timestamp){
   // search function 
   $('#submit').click(function(){
        const name = document.getElementById('inputname').value;
-       fetch(' https://api.opencagedata.com/geocode/v1/json?q='+name+'&key=5b28e77f5c474f739d928132f3aa0ca1')  
+       fetch(' https://api.opencagedata.com/geocode/v1/json?q='+name+'&key=ff0bddf526ae4f82bee54f6ef844e238')  
+      //fetch('https://api.openweathermap.org/data/2.5/weather?q='+name+'&appid=4d8fb5b93d4af21d66a2948710284366')
        .then(response => response.json())
        .then(data =>{
         cityname(data.results[0].geometry.lat, data.results[0].geometry.lng); //cityname(data.coord.lat, data.coord.lon); 
@@ -276,18 +280,18 @@ function datecoverter(timestamp){
           
           });
         
-  });       
+  }); 
   
+  
+  // default entry point for application location kolkata
      $(function defaultlocation() {
       cityname(22.5454125, 88.3567752); 
       weatherdata(22.5454125, 88.3567752) ;
      });
   
 
-   // https://api.opencagedata.com/geocode/v1/json?q='+name+'&key=5b28e77f5c474f739d928132f3aa0ca1
-  // https://api.openweathermap.org/data/2.5/weather?q='+name+'&appid=4d8fb5b93d4af21d66a2948710284366
-  
-  //bd0a482be066a89d215796065796d6f0 openweather map
+   
+
   
   
   
