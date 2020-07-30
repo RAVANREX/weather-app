@@ -124,7 +124,7 @@ function datecoverter(timestamp){
               document.getElementById('currentuvi').innerHTML = data.current.uvi;
               document.getElementById('currenthumidity').innerHTML = data.current.humidity + " %";
               document.getElementById('currentvisibility').innerHTML = data.current.visibility + " m";
-              document.getElementById('currentwindspeed').innerHTML = data.current.wind_speed + " Km/h";
+              document.getElementById('currentwindspeed').innerHTML = data.current.wind_speed + " metre/sec";
               document.getElementById('currentpressure').innerHTML = data.current.pressure + " hPa";
               document.getElementById('currentsunrise').innerHTML = timecoverter(data.current.sunrise);
               document.getElementById('currentsunset').innerHTML = timecoverter(data.current.sunset);
